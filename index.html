@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master of AI</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        @keyframes neonBlink {
+            0% { color: transparent; }
+            50% { color: #39FF14; } /* Neon green */
+            100% { color: transparent; }
+        }
+        @keyframes colorChange {
+            0% { color: #39FF14; } /* Neon green */
+            50% { color: #FF0000; } /* Red */
+            100% { color: #39FF14; } /* Back to neon green */
+        }
+        .blink-text {
+            font-size: 18px;
+            font-weight: bold;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: neonBlink 2s infinite;
+        }
+        .button, .refresh-button, .prototype-button, .worm-button, .deepfake-button, .color-changing-button, .instagram-button {
+            background-color: #39FF14;  /* Neon green color */
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .button:hover, .refresh-button:hover, .prototype-button:hover, .worm-button:hover, .deepfake-button:hover, .color-changing-button:hover, .instagram-button:hover {
+            background-color: #00FF00;  /* Green color on hover */
+        }
+        .subheading, .deepfake-warning {
+            color: red;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .warning {
+            color: red;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .prototype-subheading, .generate-images-subheading {
+            color: #39FF14;  /* Neon green color */
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 24px;
+            margin-top: 20px;
+            animation: colorChange 1s infinite;
+        }
+        .generate-images-button {
+            background-color: #39FF14;  /* Neon green color */
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            animation: colorChange 1s infinite;
+        }
+        .generate-images-button:hover {
+            background-color: #00FF00;  /* Green color on hover */
+        }
+        .instagram-logo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+        /* Responsive Design */
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
+            .button, .refresh-button, .prototype-button, .worm-button, .deepfake-button, .color-changing-button, .instagram-button {
+                padding: 10px 20px;
+                font-size: 14px;
+                margin: 5px 10px;
+            }
+            .subheading, .deepfake-warning, .prototype-subheading, .generate-images-subheading {
+                font-size: 20px;
+            }
+            .warning {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="main-heading">Master of AI</h1>
+    <button class="button" onclick="location.href='https://chatgpt.com/?model=gpt-4';">CHATGPT</button>
+    <button class="button" onclick="location.href='https://gemini.google.com/';">BARD</button>
+    <button class="button" onclick="location.href='https://undetectable.ai/';">PLAGIARISM REMOVER</button>
+    <button class="refresh-button" onclick="location.href='';">REFRESH</button>
+
+    <div class="subheading">AI FOR ILLEGAL HACKING WITHOUT LIMITATIONS</div>
+    <br><br>
+    <button class="worm-button" onclick="location.href='https://flowgpt.com/chat/wormgpt-v30';">WORM GPT</button>
+    <div class="warning">USE AT YOUR OWN RISK!</div>
+    <br>
+    <div class="prototype-subheading">BUILD YOUR OWN PROTOTYPE</div>
+    <button class="prototype-button" onclick="location.href='https://www.framer.com/?fob=wnRafOYkTr0Uze0J';">BUILD YOUR OWN PROTOTYPE</button>
+    <br>
+    <div class="deepfake-warning">BEST AI FOR DEEPFAKE USE IT WITH CAUTION DO NOT MISUSE IT</div>
+    <button class="deepfake-button" onclick="location.href='https://swapface.org/#/home';">CLICK TO MOVE TO DOWNLOAD PAGE</button>
+    <br>
+    <div class="generate-images-subheading">GENERATE REALISTIC IMAGES</div>
+    <button class="generate-images-button" onclick="location.href='https://leonardo.ai/';">CLICK TO GENERATE REALISTIC IMAGES</button>
+
+    <!-- Instagram Button -->
+    <button class="instagram-button" onclick="location.href='https://www.instagram.com/kairavhacker/';">CLICK TO FOLLOW</button>
+
+    <!-- Instagram Logo -->
+    <a href="https://www.instagram.com/kairavhacker/" target="_blank">
+        <img class="instagram-logo" src="instagram_logo.png" alt="Instagram">
+    </a>
+
+    <!-- Animation for "MADE BY KAIRAV GAUBA" -->
+    <div class="blink-text"></div>
+    <script>
+        // Text to be animated
+        const text = "MADE BY KAIRAV GAUBA";
+        let index = 0;
+        let isErasing = false;
+
+        // Function to animate text writing and erasing
+        function animateText() {
+            const blinkText = document.querySelector('.blink-text');
+            
+            setInterval(() => {
+                if (!isErasing) {
+                    blinkText.textContent = text.slice(0, index++);
+                    if (index > text.length) {
+                        isErasing = true;
+                    }
+                } else {
+                    blinkText.textContent = text.slice(0, index--);
+                    if (index === 0) {
+                        isErasing = false;
+                    }
+                }
+            }, 500); // Interval between adding/removing characters (ms)
+        }
+
+        // Start the animation when the page loads
+        animateText();
+
+        // Function to animate heading color change
+        function animateHeadingColor() {
+            const mainHeading = document.querySelector('.main-heading');
+            let isNeonColor = true;
+
+            setInterval(() => {
+                if (isNeonColor) {
+                    mainHeading.style.color = '#FF0000'; // Red color
+                } else {
+                    mainHeading.style.color = '#39FF14'; // Neon green color
+                }
+
+                isNeonColor = !isNeonColor;
+            }, 1000); // Interval for color change (ms)
+        }A
+
+        // Start heading color animation
+        animateHeadingColor();
+    </script>
+</body>
+</html>
